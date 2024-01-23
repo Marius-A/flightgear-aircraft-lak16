@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+
+
+
+copyright 2023 Marius_A
+************************************************************************
+-->
+<PropertyList>
+  <aaa>
+    <controller-mode type="string">winch</controller-mode>
+  </aaa>
+  <sim>
+    <lak16>
+      <input>
+        <invert-throttle>1</invert-throttle>
+        <invert-winch>0</invert-winch>
+      </input>
+    </lak16>
+    <!--author>Marius_A</author-->
+    <hud>
+      <path n="1">Aircraft/LAK-16/Hud/minimal.xml</path>
+      <visibility n="1">false</visibility>
+    </hud>
+	<previews>
+	  <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Aircraft/LAK-16/splash.png</path>
+	  </preview>
+	</previews>
+
+
+
+	<description>LAK-16</description>
+	<status>early production</status>
+	<rating>
+	  <FDM type="int">2</FDM>
+	  <systems type="int">5</systems>
+	  <!--no systems (electrical/hydraulic etc) present in the real aircraft-->
+	  <cockpit type="int">3</cockpit>
+	  <model type="int">3</model>
+	</rating>
+	<status>early-production</status>
+	<aircraft-version>202312</aircraft-version>
+	<long-description>
+      The LAK-16 is a single-seat, open-girder primary glider in the 1930s tradition but constructed with modern materials. It was produced in the 1980s in Lithuania.
+	</long-description>
+	<flight-model archive="y">jsb</flight-model>
+	<aero archive="y">lak16</aero>
+	<model>
+	  <path archive="y">Aircraft/LAK-16/Models/lak16.xml</path>
+	  <pilots-enabled type="bool">1</pilots-enabled>
+	  <pilots-view-enabled type="bool">0</pilots-view-enabled>
+	</model>
+	<sound>
+	  <path>Aircraft/LAK-16/Sounds/sound.xml</path>
+	</sound>
+	<systems>
+	  <property-rule n="100">
+		<name>Ground Handling</name>
+		<path>Systems/ground_handling.xml</path>
+	  </property-rule>
+	</systems>
+	<weight n="0">
+	  <name type="string">Pilot</name>
+	  <weight-lb type="double">170</weight-lb>
+	  <max-lb type="int">200</max-lb>
+	  <min-lb type="int">0</min-lb>
+	</weight>
+	<aircraft-data>
+	  <path>/sim/model/pilots-enabled</path>
+	  <path>/sim/model/pilots-view-enabled</path>
+	  <path>/sim/weight[0]/weight-lb</path>
+	</aircraft-data>
+	<!-- hide the 2D panel -->
+	<panel>
+	  <visibility archive="y">false</visibility>
+	</panel>
+
+	<!-- position the pilot viewpoint and angle -->
+	<view n="0">
+	  <name>Default</name>
+	  <type>lookfrom</type>
+	  <internal type="bool">true</internal>
+	  <config>
+		<from-model type="bool">true</from-model>
+		<from-model-idx type="int">0</from-model-idx>
+		<x-offset-m archive="y">0</x-offset-m>
+		<y-offset-m archive="y">-0.3</y-offset-m>
+		<z-offset-m archive="y">1.258</z-offset-m>
+		<pitch-offset-deg>-10</pitch-offset-deg>
+		<default-field-of-view-deg>60.0</default-field-of-view-deg>
+		<limits>
+		  <enabled type="bool">true</enabled>
+		  <left>
+			<heading-max-deg type="double">160</heading-max-deg>
+			<x-offset-max-m type="double">0.15</x-offset-max-m>
+			<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+		  </left>
+		  <right>
+			<heading-max-deg type="double">160</heading-max-deg>
+			<x-offset-max-m type="double">0.15</x-offset-max-m>
+			<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+		  </right>
+		</limits>
+	  </config>
+	</view>
+    <view n="2">
+      <config>
+        <target-y-offset-m archive="y" type="double">0.36404</target-y-offset-m>
+        <target-z-offset-m archive="y" type="double">-1.26444</target-z-offset-m>
+      </config>
+    </view>
+    <view n="3">
+      <config>
+        <target-y-offset-m archive="y" type="double">0.36404</target-y-offset-m>
+        <target-z-offset-m archive="y" type="double">-1.26444</target-z-offset-m>
+      </config>
+    </view>
+    <view n="4">
+      <config>
+        <target-y-offset-m archive="y" type="double">0.36404</target-y-offset-m>
+        <target-z-offset-m archive="y" type="double">-1.26444</target-z-offset-m>
+      </config>
+    </view>
+    <view n="5">
+      <config>
+        <target-y-offset-m archive="y" type="double">0.36404</target-y-offset-m>
+        <target-z-offset-m archive="y" type="double">-1.26444</target-z-offset-m>
+      </config>
+    </view>
+    <view n="6">
+      <config>
+        <target-y-offset-m archive="y" type="double">0.36404</target-y-offset-m>
+        <target-z-offset-m archive="y" type="double">-1.26444</target-z-offset-m>
+      </config>
+    </view>
+    <flight-recorder>
+<replay-config type="int">0</replay-config>
+<config n="0" include="/Aircraft/Generic/flightrecorder/generic-glider.xml">
+
+  <!-- Add some custom properties -->
+  <signal>
+    <type>float</type>
+    <property type="string">/velocities/groundspeed-kt</property>
+  </signal><!--
+			 <signal>
+			 <type>float</type>
+			 <property type="string">/fdm/jsbsim/aero/alpha-rad[0]</property>
+			 </signal>-->
+  <signal>
+    <type>float</type>
+    <property type="string">/accelerations/pilot-g</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/gear/gear[1]/wow</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/gear/gear[2]/wow</property>
+  </signal>
+  <signal>
+    <type>bool</type>
+    <property type="string">/gear/gear[3]/wow</property>
+</signal>
+
+<signal>
+<type>bool</type>
+<property type="string">/gear/gear[4]/wow</property>
+</signal>
+<signal>
+<type>bool</type>
+<property type="string">/sim/hitches/winch/open</property>
+</signal>
+</config>
+</flight-recorder>
+
+<hitches>
+  <aerotow>
+    <tow>
+      <brake-force type="float">6000</brake-force>
+      <elastic-constant type="float">10000</elastic-constant>
+      <length>10</length>
+    </tow>
+    <rope>
+      <rope-diameter-mm type="float">8</rope-diameter-mm>
+    </rope>
+  </aerotow>
+  <winch>
+    <automatic-release-angle-deg type="float">70.</automatic-release-angle-deg>
+    <winch>
+      <initial-tow-length-m type="float">1000.</initial-tow-length-m>
+      <max-tow-length-m type="float">1500.</max-tow-length-m>
+      <max-force-N type="float">800.</max-force-N>
+      <max-power-kW type="float">100.</max-power-kW>
+      <max-spool-speed-m-s type="float">30.</max-spool-speed-m-s>
+      <max-unspool-speed-m-s type="float">20.</max-unspool-speed-m-s>
+      <spool-acceleration-m-s-s type="float">8.</spool-acceleration-m-s-s>
+      <rel-speed alias="/sim/hitches/winch/winch/actual-spool-speed-m-s"/>
+    </winch>
+    <tow>
+      <break-force-N type="float">10000</break-force-N>
+      <elastic-constant type="float">40000</elastic-constant>
+      <weight-per-m-kg-m type="float">0.01</weight-per-m-kg-m>
+    </tow>
+    <rope>
+      <rope-diameter-mm type="float">10</rope-diameter-mm>
+    </rope>
+  </winch>
+</hitches>
+<glider>
+  <winch>
+	<conf>
+      <rope_initial_length_m>1000.0</rope_initial_length_m>
+      <pull_max_lbs>200.0</pull_max_lbs>
+      <!--					<pull_max_speed_mps>35</pull_max_speed_mps>-->
+    </conf>
+  </winch>
+  <towing>
+    <conf>
+      <rope_length_m>60.0</rope_length_m>
+      <nominal_towforce_lbs>500.0</nominal_towforce_lbs>
+      <breaking_towforce_lbs>9999.0</breaking_towforce_lbs>
+    </conf>
+    <hooked>0</hooked>
+  </towing>
+  <ac-designator type="string">LAK-16</ac-designator>
+</glider>
+</sim>
+
+<payload>
+  <weight n="0">
+    <name>Pilot</name>
+    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+    <min-lb type="double">0</min-lb>
+    <max-lb type="double">243</max-lb>
+  </weight>
+</payload>
+
+<controls>
+  <cabin>
+    <panel type="bool">true</panel>
+  </cabin>
+
+  <gear>
+    <brake-parking>1</brake-parking>
+  </gear>
+
+  <flight>
+    <rear-fairing type="bool">true</rear-fairing>
+    <elevator-trim>0.0</elevator-trim>
+    <!-- controllable -->
+    <spoilers alias="/controls/flight/elevator-trim"/>
+    <!-- spoilers is transmitted via mp (elevator-trim is NOT) -->
+    <rudder2 type="double">0</rudder2>
+  </flight>
+
+  <ground-handling type="bool">false</ground-handling>
+
+  <engines>
+    <engine>
+      <throttle>0.0</throttle>
+    </engine>
+  </engines>
+
+  <winch>
+    <place type="bool">false</place>
+  </winch>
+
+  <aerotow>
+    <find-aircraft type="bool">false</find-aircraft>
+  </aerotow>
+</controls>
+
+<input>
+  <keyboard>
+	<key n="127">
+<name>Delete</name>
+<desc>Toggle Reversers</desc>
+<binding>
+  <condition>
+	<less-than>
+<property>controls/engines/engine[0]/throttle</property>
+<value>0.1</value>
+</less-than>
+</condition>
+<command>property-toggle</command>
+<property>controls/engines/engine[0]/reverser</property>
+</binding>
+</key>
+<key n="127">
+<name>Delete</name>
+<desc>Toggle Reversers</desc>
+<binding>
+  <condition>
+	<less-than>
+<property>controls/engines/engine[0]/throttle</property>
+<value>0.1</value>
+</less-than>
+</condition>
+<command>property-toggle</command>
+<property>controls/engines/engine[0]/reverser</property>
+</binding>
+</key>
+<key n="15">
+<name>Ctrl-o</name>
+<desc>Find aircraft for aerotow</desc>
+<binding>
+<command>nasal</command>
+<script>towing.findBestAIObject()</script>
+</binding>
+</key>
+<key n="111">
+<name>o</name>
+<desc>Lock aerotow-hook</desc>
+<binding>
+<command>nasal</command>
+<script>towing.closeHitch()</script>
+</binding>
+</key>
+
+
+<key n="23">
+<name>Ctrl-w</name>
+<desc>Place Winch and hook in</desc>
+<binding>
+<command>nasal</command>
+<script>towing.setWinchPositionAuto()</script>
+</binding>
+</key>
+<key n="119">
+<name>w</name>
+<desc>Start winch</desc>
+<binding>
+<command>nasal</command>
+<script>towing.runWinch()</script>
+</binding>
+</key>
+
+</keyboard>
+</input>
+
+  <nasal>
+    <lak16>
+       <file>Nasal/groundhandling.nas</file>
+       <file>Nasal/auto-tow.nas</file>
+    </lak16>
+  </nasal>
+</PropertyList>
