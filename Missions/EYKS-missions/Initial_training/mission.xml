@@ -1,0 +1,481 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+
+
+  <include>training-area.nas</include>
+  <include>release-hitch-action.nas</include>
+  <include>enable-winch-action.nas</include>
+
+
+  <presets>
+    <airport-id>EYKS</airport-id>
+    <on-ground>1</on-ground>
+	<altitude>-9999</altitude>
+	<altitude-ft>-9999</altitude-ft>
+	<heading-deg>90</heading-deg>
+	<latitude-deg>54.88660699</latitude-deg>
+	<longitude-deg>23.87886345</longitude-deg>
+    <airspeed-kt>0</airspeed-kt>
+    <glideslope-deg>0</glideslope-deg>
+    <offset-azimuth-deg>0</offset-azimuth-deg>
+    <offset-distance-nm>0</offset-distance-nm>
+    <airport-requested>true</airport-requested>
+    <runway-requested>true</runway-requested>
+    <parking-requested>true</parking-requested>
+  </presets>
+
+	<!--timeofday>noon</timeofday-->
+
+  <object>
+    <name>TIMER_Show_briefing</name>
+    <type>timer-trigger</type>
+    <activated>1</activated>
+    <single-shot>1</single-shot>
+    <stop-time>0.0</stop-time>
+    <actions>
+      <object-reference>SHOW_Mission_briefing</object-reference>
+    </actions>
+  </object>
+
+  <object>
+    <name>SHOW_Mission_briefing</name>
+    <type>object-activation-action</type>
+    <object-state>1</object-state>
+    <reference-list>
+      <object-reference>Mission briefing</object-reference>
+    </reference-list>
+  </object>
+
+
+  <object>
+    <type>mission-briefing-action</type>
+    <name>Mission briefing</name>
+    <mission-title>Flight lesson 1. Landings</mission-title>
+
+    <difficulty>
+      <difficulty-label>
+        Rope length 5 meters
+      </difficulty-label>
+      <objectives>
+        <object-reference>Objective-Landings</object-reference>
+      </objectives>
+      <actions>
+        <object-reference>SET_LENGTH_5</object-reference>
+        <object-reference>ENABLE_START_0</object-reference>
+      </actions>
+    </difficulty>
+    <difficulty>
+      <difficulty-label>
+        Rope length 10 meters
+      </difficulty-label>
+      <objectives>
+        <object-reference>Objective-Landings</object-reference>
+      </objectives>
+      <actions>
+        <object-reference>SET_LENGTH_10</object-reference>
+        <object-reference>ENABLE_START_0</object-reference>
+      </actions>
+    </difficulty>
+    <difficulty>
+      <difficulty-label>
+        Rope length 15 meters
+      </difficulty-label>
+      <objectives>
+        <object-reference>Objective-Landings</object-reference>
+      </objectives>
+      <actions>
+        <object-reference>SET_LENGTH_15</object-reference>
+        <object-reference>ENABLE_START_0</object-reference>
+      </actions>
+    </difficulty>
+  </object>
+
+  <object>
+    <name>Objective-Landings</name>
+    <type>objective</type>
+    <text>
+      Perform 5 landings.
+    </text>
+    <optional>0</optional>
+  </object>
+
+  <object>
+    <name>Objective-Complete-Landings</name>
+    <type>objective-status-action</type>
+    <objective-status>completed</objective-status>
+    <objectives>
+      <object-reference>Objective-Landings</object-reference>
+    </objectives>
+  </object>
+
+
+
+  <object>
+    <name>SET_LENGTH_5</name>
+    <type>run-binding-action</type>
+    <binding>
+      <command>property-assign</command>
+      <property>/sim/hitches/aerotow/tow/length</property>
+      <value>5</value>
+    </binding>
+  </object>
+
+  <object>
+    <name>SET_LENGTH_10</name>
+    <type>run-binding-action</type>
+    <binding>
+      <command>property-assign</command>
+      <property>/sim/hitches/aerotow/tow/length</property>
+      <value>10</value>
+    </binding>
+  </object>
+
+  <object>
+    <name>SET_LENGTH_15</name>
+    <type>run-binding-action</type>
+    <binding>
+      <command>property-assign</command>
+      <property>/sim/hitches/aerotow/tow/length</property>
+      <value>15</value>
+    </binding>
+  </object>
+
+  <object>
+    <name>SHOW_HUD</name>
+    <type>run-binding-action</type>
+    <binding>
+      <command>property-assign</command>
+      <property>/sim/hud/visibility[1]</property>
+      <value>1</value>
+    </binding>
+  </object>
+
+  <object>
+    <name>HIDE_HUD</name>
+    <type>run-binding-action</type>
+    <binding>
+      <command>property-assign</command>
+      <property>/sim/hud/visibility[1]</property>
+      <value>0</value>
+    </binding>
+  </object>
+
+
+
+
+
+  <object>
+    <type>training-area</type>
+    <name>training-area</name>
+    <marker>
+      <model>RectangularGroundmarker_RedWhite.ac</model>
+      <heading-offset-deg>90</heading-offset-deg>
+    </marker>
+    <length-m>400</length-m>
+    <markers-per-length>8</markers-per-length>
+    <width-m>50</width-m>
+    <latitude-deg>54.88660693702077</latitude-deg>
+    <longitude-deg>23.88245548308549</longitude-deg>
+    <heading-deg>90</heading-deg>
+  </object>
+
+
+  <!-- Timers -->
+
+  <object>
+    <name>TIMER_START_0</name>
+    <type>timer-trigger</type>
+    <activated>0</activated>
+    <single-shot>1</single-shot>
+    <stop-time>2.0</stop-time>
+    <actions>
+      <object-reference>ENABLE_START_0</object-reference>
+    </actions>
+  </object>
+
+
+  <!-- Object activation actions-->
+  <object>
+    <name>ENABLE_START_0</name>
+    <type>object-activation-action</type>
+    <object-state>1</object-state>
+    <reference-list>
+      <object-reference>POI-START-0</object-reference>
+      <object-reference>PROXIMITY-START-0</object-reference>
+    </reference-list>
+  </object>
+
+  <object>
+    <name>ENABLE_START_1</name>
+    <type>object-activation-action</type>
+    <object-state>1</object-state>
+    <reference-list>
+      <object-reference>POI-START-1</object-reference>
+      <object-reference>PROXIMITY-START-1</object-reference>
+    </reference-list>
+  </object>
+
+
+  <object>
+    <name>DISABLE_START_0</name>
+    <type>object-activation-action</type>
+    <object-state>0</object-state>
+    <reference-list>
+      <object-reference>POI-START-0</object-reference>
+      <object-reference>PROXIMITY-START-0</object-reference>
+    </reference-list>
+  </object>
+
+  <object>
+    <name>DISABLE_START_1</name>
+    <type>object-activation-action</type>
+    <object-state>0</object-state>
+    <reference-list>
+      <object-reference>POI-START-1</object-reference>
+      <object-reference>PROXIMITY-START-1</object-reference>
+    </reference-list>
+  </object>
+
+  <object>
+    <name>DISABLE_PROXIMITY_FINISH_0</name>
+    <type>object-activation-action</type>
+    <object-state>0</object-state>
+    <reference-list>
+      <object-reference>PROXIMITY-FINISH-0</object-reference>
+    </reference-list>
+  </object>
+  <object>
+    <name>DISABLE_PROXIMITY_FINISH_1</name>
+    <type>object-activation-action</type>
+    <object-state>0</object-state>
+    <reference-list>
+      <object-reference>PROXIMITY-FINISH-1</object-reference>
+    </reference-list>
+  </object>
+
+  <object>
+    <name>ENABLE_PROXIMITY_FINISH_0</name>
+    <type>object-activation-action</type>
+    <object-state>1</object-state>
+    <reference-list>
+      <object-reference>PROXIMITY-FINISH-0</object-reference>
+    </reference-list>
+  </object>
+  <object>
+    <name>ENABLE_PROXIMITY_FINISH_1</name>
+    <type>object-activation-action</type>
+    <object-state>1</object-state>
+    <reference-list>
+      <object-reference>PROXIMITY-FINISH-1</object-reference>
+    </reference-list>
+  </object>
+
+  <object>
+    <name>ENABLE_PROP_0</name>
+    <type>object-activation-action</type>
+    <object-state>1</object-state>
+    <reference-list>
+      <object-reference>PROP-0</object-reference>
+    </reference-list>
+  </object>
+  <object>
+    <name>ENABLE_PROP_1</name>
+    <type>object-activation-action</type>
+    <object-state>1</object-state>
+    <reference-list>
+      <object-reference>PROP-1</object-reference>
+    </reference-list>
+  </object>
+
+  <object>
+    <name>DISABLE_PROP_0</name>
+    <type>object-activation-action</type>
+    <object-state>0</object-state>
+    <reference-list>
+      <object-reference>PROP-0</object-reference>
+    </reference-list>
+  </object>
+  <object>
+    <name>DISABLE_PROP_1</name>
+    <type>object-activation-action</type>
+    <object-state>0</object-state>
+    <reference-list>
+      <object-reference>PROP-1</object-reference>
+    </reference-list>
+  </object>
+
+  <object>
+    <name>ENABLE_WINCH</name>
+    <type>object-activation-action</type>
+    <object-state>1</object-state>
+    <reference-list>
+      <object-reference>ENABLE-TOWING</object-reference>
+    </reference-list>
+  </object>
+
+  <object>
+    <name>DISABLE_WINCH</name>
+    <type>object-activation-action</type>
+    <object-state>0</object-state>
+    <reference-list>
+      <object-reference>ENABLE-TOWING</object-reference>
+    </reference-list>
+  </object>
+
+  <object>
+    <name>COUNT_LANDING</name>
+    <type>count-action</type>
+    <count>1</count>
+    <triggers>
+      <object-reference>LANDING-COUNTER</object-reference>
+      <!--object-reference>LANDING-COUNTER2</object-reference-->
+    </triggers>
+  </object>
+
+  <!-- Triggers -->
+
+  <object>
+    <name>LANDING-COUNTER</name>
+    <type>counter-trigger</type>
+    <text>Landings</text>
+    <activated>1</activated>
+    <start-count>0</start-count>
+    <stop-count>1</stop-count>
+    <actions>
+      <object-reference>Objective-Complete-Landings</object-reference>
+    </actions>
+  </object>
+
+  <object>
+    <name>LANDING-COUNTER2</name>
+    <type>counter-trigger</type>
+    <text>Bad landings</text>
+    <activated>0</activated>
+    <start-count>-99</start-count>
+    <stop-count>0</stop-count>
+    <actions>
+      <object-reference> </object-reference>
+    </actions>
+  </object>
+
+
+  <object>
+    <name>PROXIMITY-START-0</name>
+    <type>proximity-trigger</type>
+    <activated>0</activated>
+    <areas>
+      <object-reference>AREA-START-0</object-reference>
+    </areas>
+    <on-enter-actions>
+      <object-reference>DISABLE_START_0</object-reference>
+      <object-reference>ENABLE_PROXIMITY_FINISH_1</object-reference>
+      <object-reference>ENABLE_WINCH</object-reference>
+      <object-reference>SHOW_HUD</object-reference>
+    </on-enter-actions>
+  </object>
+
+  <object>
+    <name>PROXIMITY-START-1</name>
+    <type>proximity-trigger</type>
+    <activated>0</activated>
+    <areas>
+      <object-reference>AREA-START-1</object-reference>
+    </areas>
+    <on-enter-actions>
+      <object-reference>DISABLE_START_1</object-reference>
+      <object-reference>ENABLE_PROXIMITY_FINISH_0</object-reference>
+      <object-reference>ENABLE_WINCH</object-reference>
+      <object-reference>SHOW_HUD</object-reference>
+    </on-enter-actions>
+  </object>
+
+
+
+  <object>
+    <name>PROXIMITY-FINISH-0</name>
+    <type>proximity-trigger</type>
+    <activated>0</activated>
+    <areas>
+      <object-reference>AREA-FINISH-0</object-reference>
+    </areas>
+    <on-enter-actions>
+      <object-reference>ENABLE_PROP_0</object-reference>
+      <object-reference>DISABLE_PROXIMITY_FINISH_0</object-reference>
+      <object-reference>RELEASE-HITCH</object-reference>
+      <object-reference>DISABLE_WINCH</object-reference>
+    </on-enter-actions>
+  </object>
+
+
+  <object>
+    <name>PROXIMITY-FINISH-1</name>
+    <type>proximity-trigger</type>
+    <activated>0</activated>
+    <areas>
+      <object-reference>AREA-FINISH-1</object-reference>
+    </areas>
+    <on-enter-actions>
+      <object-reference>ENABLE_PROP_1</object-reference>
+      <object-reference>DISABLE_PROXIMITY_FINISH_1</object-reference>
+      <object-reference>RELEASE-HITCH</object-reference>
+      <object-reference>DISABLE_WINCH</object-reference>
+    </on-enter-actions>
+  </object>
+
+  <object>
+    <name>PROP-0</name>
+    <type>property-trigger</type>
+    <update-interval-sec>2</update-interval-sec>
+    <condition>
+      <property>/gear/gear[3]/wow</property>
+      <less-than>
+        <property>/velocities/groundspeed-kt</property>
+        <value>15</value>
+      </less-than>
+    </condition>
+    <actions>
+      <object-reference>ENABLE_START_0</object-reference>
+      <object-reference>DISABLE_PROP_0</object-reference>
+      <object-reference>COUNT_LANDING</object-reference>
+      <object-reference>HIDE_HUD</object-reference>
+    </actions>
+  </object>
+  <object>
+    <name>PROP-1</name>
+    <type>property-trigger</type>
+    <update-interval-sec>2</update-interval-sec>
+    <condition>
+      <property>/gear/gear[3]/wow</property>
+      <less-than>
+        <property>/velocities/groundspeed-kt</property>
+        <value>15</value>
+      </less-than>
+    </condition>
+    <actions>
+      <object-reference>ENABLE_START_1</object-reference>
+      <object-reference>DISABLE_PROP_1</object-reference>
+      <object-reference>COUNT_LANDING</object-reference>
+      <object-reference>HIDE_HUD</object-reference>
+    </actions>
+  </object>
+
+
+  <object>
+    <name>RELEASE-HITCH</name>
+    <type>release-hitch-action</type>
+  </object>
+
+  <object>
+    <name>ENABLE-TOWING</name>
+    <type>enable-winch-action</type>
+    <activated>0</activated>
+  </object>
+
+  <!-- Models -->
+
+
+
+  <!-- Points of Interest -->
+
+</PropertyList>

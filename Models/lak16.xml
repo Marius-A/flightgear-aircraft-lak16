@@ -1,0 +1,486 @@
+<?xml version="1.0"?>
+<!--Schulgleiter SG38-->
+<!--2017 D-ECHO-->
+<!--based on-->
+<!-- Schleicher ASK 13 Glider  -->
+<!-- Copyright 2010 Patrice Poly -->
+
+<PropertyList>
+
+  <path>lak16.ac</path>
+
+  <offsets>
+    <x-m>0.</x-m>
+    <y-m>0.</y-m>
+    <z-m>0.</z-m>
+    <pitch-deg>0.0</pitch-deg>
+  </offsets>
+
+  <animation>
+	<type>rotate</type>
+	<object-name>Stick</object-name>
+	<object-name>Axis.Stick.Pitch</object-name>
+	<property>/controls/flight/aileron</property>
+	<factor>17</factor>
+	<axis>
+	  <object-name>Axis.Stick.Roll</object-name>
+	</axis>
+  </animation>
+
+  <animation>
+	<type>rotate</type>
+	<object-name>Stick</object-name>
+	<property>/controls/flight/elevator</property>
+    <interpolation>
+	  <entry>
+		<ind>-1.0</ind>
+		<dep>24.0</dep>
+	  </entry>
+	  <entry>
+		<ind>0.0</ind>
+		<dep>0.0</dep>
+	  </entry>
+	  <entry>
+		<ind>1.0</ind>
+		<dep>-22.0</dep>
+	  </entry>
+	</interpolation>
+	<axis>
+	  <object-name>Axis.Stick.Pitch</object-name>
+	</axis>
+  </animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Pedals</object-name>
+		<property>controls/flight/rudder</property>
+		<factor>30</factor>
+		<axis>
+			<object-name>Axis.Pedals</object-name>
+		</axis>
+	</animation>
+
+
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Rudder</object-name>
+    <property>controls/flight/rudder</property>
+    <factor>-28</factor>
+    <axis>
+	  <object-name>Axis.Rudder</object-name>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Elevator</object-name>
+    <property>/controls/flight/elevator</property>
+    <factor>-20</factor>
+    <axis>
+	  <object-name>Axis.Elevator</object-name>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <shininess>30</shininess>
+    <specular>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </specular>
+    <ambient>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </ambient>
+    <diffuse>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+    </diffuse>
+    <object-name>Frame</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <shininess>20</shininess>
+    <specular>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </specular>
+    <ambient>
+      <red>0.3</red>
+      <green>0.3</green>
+      <blue>0.3</blue>
+    </ambient>
+    <diffuse>
+      <red>0.3</red>
+      <green>0.3</green>
+      <blue>0.3</blue>
+    </diffuse>
+    <object-name>Cables</object-name>
+  </animation>
+
+
+  <animation>
+    <type>material</type>
+    <shininess>40</shininess>
+    <specular>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </specular>
+    <ambient>
+      <red>0.5</red>
+      <green>0.5</green>
+      <blue>0.5</blue>
+    </ambient>
+    <diffuse>
+      <red>0.5</red>
+      <green>0.5</green>
+      <blue>0.5</blue>
+    </diffuse>
+    <object-name>Plates</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <shininess>50</shininess>
+    <specular>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </specular>
+    <ambient>
+      <red>0.1</red>
+      <green>0.1</green>
+      <blue>0.1</blue>
+    </ambient>
+    <diffuse>
+      <red>0.1</red>
+      <green>0.1</green>
+      <blue>0.1</blue>
+    </diffuse>
+    <object-name>LG.Spring.c</object-name>
+    <object-name>LG.Spring.L.1</object-name>
+    <object-name>LG.Spring.L.2</object-name>
+    <object-name>LG.Spring.R.1</object-name>
+    <object-name>LG.Spring.R.2</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <shininess>10</shininess>
+    <specular>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </specular>
+    <ambient>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </ambient>
+    <diffuse>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </diffuse>
+    <object-name>LG.Wheel.L</object-name>
+    <object-name>LG.Wheel.R</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <shininess>80</shininess>
+    <specular>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </specular>
+    <ambient>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </ambient>
+    <diffuse>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </diffuse>
+    <object-name>Stick</object-name>
+    <object-name>Pedals</object-name>
+  </animation>
+
+
+
+
+  <!--animation>
+    <type>material</type>
+    <shininess>116</shininess>
+    <specular>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </specular>
+    <ambient>
+      <red>0.0</red>
+      <green>0.541</green>
+      <blue>1.0</blue>
+    </ambient>
+    <diffuse>
+      <red>0.0</red>
+      <green>0.541</green>
+      <blue>1.0</blue>
+    </diffuse>
+  </animation-->
+
+
+
+	<animation>
+      <type>material</type>
+      <shininess>116</shininess>
+      <specular>
+        <red>1</red>
+        <green>1</green>
+        <blue>1</blue>
+      </specular>
+      <ambient>
+        <red>1</red>
+        <green>1</green>
+        <blue>1</blue>
+      </ambient>
+      <diffuse>
+        <red>1</red>
+        <green>1</green>
+        <blue>1</blue>
+      </diffuse>
+      <object-name>Fin</object-name>
+      <object-name>Wings</object-name>
+      <object-name>Aileron.R</object-name>
+      <object-name>Aileron.L</object-name>
+      <object-name>Fairing</object-name>
+      <object-name>HTail</object-name>
+      <object-name>Elevator</object-name>
+      <object-name>Rudder</object-name>
+      <object-name>Nose</object-name>
+	</animation>
+
+	<effect>
+	  <inherits-from>Effects/lak16-reflect</inherits-from>
+      <object-name>Fin</object-name>
+      <object-name>Wings</object-name>
+      <object-name>Aileron.R</object-name>
+      <object-name>Aileron.L</object-name>
+      <object-name>Fairing</object-name>
+      <object-name>HTail</object-name>
+      <object-name>Rudder</object-name>
+      <object-name>Elevator</object-name>
+      <object-name>Nose</object-name>
+      <object-name>Frame</object-name>
+	</effect>
+
+    <!--effect>
+      <inherits-from>Effects/bumpspec-htail</inherits-from>
+      <object-name>Elevator</object-name>
+    </effect-->
+
+
+	<animation>
+	  <type>rotate</type>
+      <object-name>LG.Spring.L.1</object-name>
+      <object-name>Axis.Spring.L.2</object-name>
+      <object-name>LG.Spring.L.2</object-name>
+	  <object-name>LG.Wheel.L</object-name>
+      <object-name>Axis.Axle.L</object-name>
+	  <property>/gear/gear[1]/compression-ft</property>
+	  <interpolation>
+		<entry>
+		  <ind>0.0</ind>
+		  <dep>0.0</dep>
+		</entry>
+		<entry>
+		  <ind>0.164</ind>
+		  <dep>5.52</dep>
+		</entry>
+		<entry>
+		  <ind>0.328</ind>
+		  <dep>11.13</dep>
+		</entry>
+		<entry>
+		  <ind>0.492</ind>
+		  <dep>15.0</dep>
+		</entry>
+	  </interpolation>
+	  <axis>
+		<object-name>Axis.Spring.L.1</object-name>
+	  </axis>
+	</animation>
+
+
+	<animation>
+	  <type>rotate</type>
+      <object-name>LG.Spring.L.2</object-name>
+	  <object-name>LG.Wheel.L</object-name>
+      <object-name>Axis.Axle.L</object-name>
+	  <property>/gear/gear[1]/compression-ft</property>
+	  <interpolation>
+		<entry>
+		  <ind>0.0</ind>
+		  <dep>0.0</dep>
+		</entry>
+		<entry>
+		  <ind>0.164</ind>
+		  <dep>4.0</dep>
+		</entry>
+		<entry>
+		  <ind>0.328</ind>
+		  <dep>10.0</dep>
+		</entry>
+		<entry>
+		  <ind>0.492</ind>
+		  <dep>12.0</dep>
+		</entry>
+	  </interpolation>
+	  <axis>
+		<object-name>Axis.Spring.L.2</object-name>
+	  </axis>
+	</animation>
+
+	<animation>
+	  <type>spin</type>
+	  <object-name>LG.Wheel.L</object-name>
+	  <property>/gear/gear[1]/rollspeed-ms</property>
+	  <factor>-35</factor>
+	  <axis>
+		<object-name>Axis.Axle.L</object-name>
+	  </axis>
+	</animation>
+
+
+
+
+	<animation>
+	  <type>rotate</type>
+      <object-name>LG.Spring.R.1</object-name>
+      <object-name>Axis.Spring.R.2</object-name>
+      <object-name>LG.Spring.R.2</object-name>
+	  <object-name>LG.Wheel.R</object-name>
+      <object-name>Axis.Axle.R</object-name>
+	  <property>/gear/gear[2]/compression-ft</property>
+	  <interpolation>
+		<entry>
+		  <ind>0.0</ind>
+		  <dep>0.0</dep>
+		</entry>
+		<entry>
+		  <ind>0.164</ind>
+		  <dep>-5.52</dep>
+		</entry>
+		<entry>
+		  <ind>0.328</ind>
+		  <dep>-11.13</dep>
+		</entry>
+		<entry>
+		  <ind>0.492</ind>
+		  <dep>-15.0</dep>
+		</entry>
+	  </interpolation>
+	  <axis>
+		<object-name>Axis.Spring.R.1</object-name>
+	  </axis>
+	</animation>
+
+
+	<animation>
+	  <type>rotate</type>
+      <object-name>LG.Spring.R.2</object-name>
+	  <object-name>LG.Wheel.R</object-name>
+      <object-name>Axis.Axle.R</object-name>
+	  <property>/gear/gear[2]/compression-ft</property>
+	  <interpolation>
+		<entry>
+		  <ind>0.0</ind>
+		  <dep>0.0</dep>
+		</entry>
+		<entry>
+		  <ind>0.164</ind>
+		  <dep>-4.0</dep>
+		</entry>
+		<entry>
+		  <ind>0.328</ind>
+		  <dep>-10.0</dep>
+		</entry>
+		<entry>
+		  <ind>0.492</ind>
+		  <dep>-12.0</dep>
+		</entry>
+	  </interpolation>
+	  <axis>
+		<object-name>Axis.Spring.R.2</object-name>
+	  </axis>
+	</animation>
+
+	<animation>
+	  <type>spin</type>
+	  <object-name>LG.Wheel.R</object-name>
+	  <property>/gear/gear[2]/rollspeed-ms</property>
+	  <factor>35</factor>
+	  <axis>
+		<object-name>Axis.Axle.R</object-name>
+	  </axis>
+	</animation>
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Aileron.L</object-name>
+		<property>/controls/flight/aileron</property>
+		<interpolation>
+			<entry>
+				<ind>-1.0</ind>
+				<dep>20.0</dep>
+			</entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-10.0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<object-name>Axis.Aileron.L</object-name>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Aileron.R</object-name>
+		<property>/controls/flight/aileron</property>
+		<interpolation>
+			<entry>
+				<ind>-1.0</ind>
+				<dep>10.0</dep>
+			</entry>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-20.0</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<object-name>Axis.Aileron.R</object-name>
+		</axis>
+	</animation>
+
+
+
+ </PropertyList>

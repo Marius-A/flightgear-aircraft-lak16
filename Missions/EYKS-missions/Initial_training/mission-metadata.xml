@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <name>Flight training: take-off and landing</name>
+  <skill-level>2</skill-level>
+
+  <authors>
+    <author>
+      <name>Marius_A</name>
+    </author>
+  </authors>
+
+  <description>Initial training. Rope: 5/10/15 m</description>
+
+</PropertyList>

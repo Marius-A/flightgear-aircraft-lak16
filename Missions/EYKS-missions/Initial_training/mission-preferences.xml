@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+  <controls>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+    <ground-handling>0</ground-handling>
+  </controls>
+
+  <sim>
+	<lak16>
+      <training-area>
+        <heading-deg>90</heading-deg>
+      </training-area>
+	</lak16>
+    <time>
+      <gmt>2024-04-01T13:00:00</gmt>
+    </time>
+    <hud>
+      <visibility n="1">false</visibility>
+    </hud>
+    <!--hitches>
+      <aerotow>
+        <tow>
+          <length>10</length>
+        </tow>
+      </aerotow>
+    </hitches-->
+
+  </sim>
+
+</PropertyList>
