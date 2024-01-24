@@ -1,3 +1,5 @@
 
 * About
-LAK-16 aircraft for FlightGear flight simulator.
+  LAK-16 aircraft for FlightGear flight simulator.
+
+  [[./splash.png]]
