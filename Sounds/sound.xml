@@ -6,7 +6,7 @@
 		<tyre-rumble>
 			<name>tyre-rumble</name>
 			<mode>looped</mode>
-			<path>Aircraft/SG38/Sounds/ground_roll2.wav</path>
+			<path>Aircraft/LAK-16/Sounds/ground_roll2.wav</path>
 			<condition>
 				<or>
 					<property>/gear/gear[0]/wow</property>
@@ -22,7 +22,7 @@
 		<left-wing-tip>
 			<name>left-wing-tip</name>
 			<mode>once</mode>
-			<path>Aircraft/SG38/Sounds/left-wing-tip.wav</path>
+			<path>Aircraft/LAK-16/Sounds/left-wing-tip.wav</path>
 			<condition>
 				<property>/gear/gear[3]/wow</property>
 			</condition>
@@ -30,7 +30,7 @@
 		<right-wing-tip>
 			<name>right-wing-tip</name>
 			<mode>once</mode>
-			<path>Aircraft/SG38/Sounds/right-wing-tip.wav</path>
+			<path>Aircraft/LAK-16/Sounds/right-wing-tip.wav</path>
 			<condition>
 				<property>/gear/gear[4]/wow</property>
 			</condition>
@@ -38,7 +38,7 @@
 		<tail-tip>
 			<name>tail-tip</name>
 			<mode>once</mode>
-			<path>Aircraft/SG38/Sounds/wing-tip.wav</path>
+			<path>Aircraft/LAK-16/Sounds/wing-tip.wav</path>
 			<condition>
 				<property>/gear/gear[2]/wow</property>
 			</condition>
@@ -46,7 +46,7 @@
 		<wind>
 			<name>wind</name>
 			<mode>looped</mode>
-			<path>Aircraft/SG38/Sounds/wind-ask13.wav</path>
+			<path>Aircraft/LAK-16/Sounds/wind-ask13.wav</path>
 			<property>velocities/airspeed-kt</property>
 			<volume>
 				<property>fdm/jsbsim/aero/qbar-area</property>
@@ -63,7 +63,7 @@
 		<winch_tow>
 			<name>winch_tow</name>
 			<mode>looped</mode>
-			<path>Aircraft/SG38/Sounds/winch_tow.wav</path>
+			<path>Aircraft/LAK-16/Sounds/winch_tow.wav</path>
 			<condition>
 				<not>
 					<property>sim/hitches/winch/open</property>
@@ -78,7 +78,7 @@
 		<creak-positive>
 			<name>creak-positive</name>
 			<mode>once</mode>
-			<path>Aircraft/SG38/Sounds/creak.wav</path>
+			<path>Aircraft/LAK-16/Sounds/creak.wav</path>
 			<condition>
 				<greater-than>
 					<property>accelerations/pilot-g</property>
@@ -94,7 +94,7 @@
 		<whoosh-negative>
 			<name>whoosh-negative</name>
 			<mode>once</mode>
-			<path>Aircraft/SG38/Sounds/creak.wav</path>
+			<path>Aircraft/LAK-16/Sounds/creak.wav</path>
 			<condition>
 				<less-than>
 					<property>orientation/pitch-rate-degps</property>
@@ -110,7 +110,7 @@
 		<cable_release>
 			<name>cable_release</name>
 			<mode>once</mode>
-			<path>Aircraft/SG38/Sounds/winch_release.wav</path>
+			<path>Aircraft/LAK-16/Sounds/winch_release.wav</path>
 			<condition>
 				<property>sim/hitches/winch/open</property>
 			</condition>
